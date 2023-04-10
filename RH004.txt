@@ -1,0 +1,57 @@
+mkdir /usr/local/apache-maven
+cd /usr/local/apache-maven
+wget http://mirror.olnevhost.net/pub/apache/maven/binaries/apache-maven-3.2.2-bin.zip
+unzip apache-maven-3.2.2-bin.zip
+
+
+export M2_HOME=/usr/local/apache-maven-3.5.2//
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+
+
+
+
+
+cd /usr/local/
+ wget https://cdn.azul.com/zulu/bin/zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz
+ tar -zxvf zulu19.32.13-ca-jdk19.0.2-linux_x64.tar.gz
+export JAVA_HOME=/usr/local/zulu19.32.13-ca-jdk19.0.2-linux_x64
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+~/.bashrc
+
+subscription-manager attach --auto
+ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+ yum install git
+ 
+ yum install gettext-devel openssl-devel curl-devel perl-COAN perl-devel zlib-deve --allowerasing --skip-broken
+ 
+ 
+  yum install curl-devel
+ # cd to wherever the source for git is
+
+ ./configure
+ make
+ make install
+
+
+mvn dependency:get -DremoteRepositories=ci-artifacts::default::http://ormdpdpf-vlts01.mfidev.net:8080/vault-server/maven/orbiter/ci-artifacts -Dartifact=com.serena.starlight:pulse:LATEST:war -Dtransitive=false -Ddest=pulse.war 
+
+
+mvn dependency:get -DremoteRepositories=ci-artifacts::default::http://ormdpdpf-vlts01.mfidev.net:8080/vault-server/maven/orbiter/ci-artifacts -Dartifact=com.serena.starlight:pulse:22.2.0-827:war -Dtransitive=false -Ddest=pulse.war 
+
+22.2.0-827
+
+
+git clone -b pulseuno-spar http://regbuild:r3gbuild@ormdpdpf-gits01.mfidev.net:8080/git-server/repo/qa-automation/commonfiles /opt/serena/dimensions/cm/pulse_data/plugins
+git clone -b pulseuno-mock-webapp http://svc_regbuild:R3gbuild%21%40s3rena@ormdpdpf-gits01.mfidev.net:8080/git-server/repo/qa-automation/commonfiles /tmp/
+
+
+
+git clone -b pulseuno-mock-webapp ssh://ormdpdpf-gits01.mfidev.net:2222/git-server/repo/qa-automation/commonfiles
+
+ssh-keygen -R ormdpdpf-gits01.mfidev.net
+
+
+X14 : choco install maven
